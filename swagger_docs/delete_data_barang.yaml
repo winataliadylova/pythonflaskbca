@@ -1,0 +1,20 @@
+openapi: 3.0.0
+
+info: 
+  title: Delete Satu Data Barang
+  version: 1.0.0
+
+tags:
+ - name: Delete API
+
+parameters:
+  - name: item_id
+    in: path
+    description: ID barang yang akan dihapus
+    type: integer
+
+responses:
+  200: 
+    description: Data barang berhasil dihapus
+  400: 
+    description: Data tidak ditemukan 

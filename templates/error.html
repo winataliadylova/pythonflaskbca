@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body class="red-theme">
+    <div class="form-container">
+        <div class="error-message">
+            {{pesan}}
+        </div>
+        <a href="/" class="home-button">Kembali ke Home</a>
+        <a href={{link}} class="home-button">Kembali ke halaman sebelumnya</a>
+    </div>
+</body>
+</html>

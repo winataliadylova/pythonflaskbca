@@ -1,0 +1,55 @@
+openapi: 3.0.0
+
+info: 
+  title: Update Satu Data Barang
+  version: 1.0.0
+
+tags:
+ - name: Update API
+
+parameters:
+  - name: item_id
+    in: path
+    description: ID Barang yang akan diupdate
+    type: integer
+  - in: body
+    name: body
+    description: Data barang yang akan diperbarui
+    required: true
+    schema: 
+      type: object # tipe dari skema, dalam hal ini adalah object 
+      properties: # adaftar properti yang dapat dimiliki oleh onbject
+        name: # nama dari properti
+          type: string # tipe dari properti
+        category: # nama dari properti
+          type: string #tipe dari properti
+        quantity: # nama dari properti
+          type: integer # tipe dari properti
+        price: # nama dari properti
+          type: number # tipe dari properti
+
+responses:
+  200: 
+    description: Data barang berhasil diperbarui
+    schema:
+      $ref: '#/definitions/Item'
+  400: 
+    description: Data tidak ditemukan 
+
+definitions: #daftar definisi skema yang dapat digunakan di seluruh file
+  Item: # nama dari definisi skema
+    type: object # tipe dari skema, dalam hal ini adalah object 
+    properties: # adaftar properti yang dapat dimiliki oleh onbject
+      name: # nama dari properti
+        type: string # tipe dari properti
+      category: # nama dari properti
+        type: string #tipe dari properti
+      quantity: # nama dari properti
+        type: integer # tipe dari properti
+      price: # nama dari properti
+        type: number # tipe dari properti
+      required: # daftar properti yang wajib ada dalam object
+        - name #properti ini adalah wajib
+        - category #properti ini adalah wajib
+        - quantity #properti ini adalah wajib
+        - price #properti ini adalah wajib

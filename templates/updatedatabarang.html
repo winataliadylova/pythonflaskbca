@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search and Update Data Karyawan</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body class="purple-theme">
+    <h2>Search Data to Update</h2>
+    
+    <div class="form-container">
+        <form action="/barang/updatedata" method="post">
+            <label for="name" class="field-label">Nama Barang:</label>
+            <input type="text" name="name" id="name" placeholder="Enter the name">
+            <input type="submit" value="Search" class="update-button">           
+        </form> 
+        <a href="/" class="home-button">Kembali ke Home</a>
+    </div>
+
+    {% if list_data %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID Barang</th>
+                <th>Nama Barang</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in list_data %}
+            <tr>
+                <td>{{item.item_id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.quantity}}</td>
+                <td>Rp. {{item.price}}</td>
+                <td>
+                    <button onclick="showUpdateForm('{{item.item_id}}', '{{item.name}}', '{{item.category}}', '{{item.quantity}}', '{{item.price}}')" class="update-button">Update</button>
+                    <button onclick="confirmDelete('{{item.item_id}}', '{{item.name}}')" class="delete-button-red">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div id="updateForm" style="display: none;">
+        <h3>Update Data:</h3>
+        <form action="/barang/update_data" method="post">
+            <input type="hidden" id="updateId" name="item_id">
+            <label for="updateNama" class="field-label">Nama Barang</label>
+            <input type="text" id="updateNama" name="name" placeholder="New Name" required>
+            <label for="updateCategory" class="field-label">Category:</label>
+            <input type="text" id="updateCategory" name="category" placeholder="New Category" required>
+            <label for="updateQuantity" class="field-label">Quantity:</label>
+            <input type="number" id="updateQuantity" name="quantity" placeholder="New Quantity" required>
+            <label for="updatePrice" class="field-label">Harga:</label>
+            <input type="number" id="updatePrice" name="price" placeholder="New Price" required>
+            <input type="submit" value="Submit" class="update-button">
+        </form>
+    </div>
+
+    <script>
+        function showUpdateForm(id, nama_item, category, quantity, price){
+            document.getElementById('updateId').value = id;
+            document.getElementById('updateNama').value = nama_item;
+            document.getElementById('updateCategory').value = category;
+            document.getElementById('updateQuantity').value = quantity;
+            document.getElementById('updatePrice').value = price;
+            document.getElementById('updateForm').style.display= 'block';
+        }
+    </script>
+
+    <script>
+        function confirmDelete(id, nama_item){
+            const isConfirmed = confirm(`Apakah anda yakin ingin menghapus data ${nama_item}`);
+            if(isConfirmed){
+                fetch(`/api/barang/${id}`, {
+                    method: 'DELETE',
+                })
+                .then(response => response.json())
+                .then(data=> {
+                    if(data.message.includes("berhasil dihapus")){
+                        alert("Data berhasil dihapus!");
+                        location.reload();
+                    }
+                    else{
+                        alert("Terjadi kesalahan saat menghapus data. Silahkan coba lagi.");
+                    }
+                })
+                .catch (error => {
+                    console.error("Error: ", error);
+                    alert("Terjadi kesalahan saat menghapus data. Silahkan coba lagi.");
+                });
+            }
+        }
+    </script>
+
+    <br>
+    {% else %}
+        <p>Tidak ada data yang ditemukan untuk nama karyawan yang diberikan.</p>
+    {% endif %}
+</body>
+</html>

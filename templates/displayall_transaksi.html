@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilkan Semua Data Karyawan</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <!-- <style>
+        body{
+            background-color: yellow;
+        }
+    </style> -->
+</head>
+<body>
+    <a href="/" class="home-button-display">Kembali ke Home</a>
+    <h1>Semua Data Transaksi</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Item ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in list_transaction %}
+            <tr>
+                <td>{{transaction.transaction_id}}</td>
+                <td>{{transaction.item_id}}</td>
+                <td>{{transaction.name}}</td>
+                <td>{{transaction.category}}</td>
+                <td>{{transaction.date}}</td>
+                <td>{{transaction.quantity}}</td>
+                <td>Rp. {{transaction.total_price}}</td>
+                <td>
+                    <button onclick="confirmDelete('{{transaction.transaction_id}}')" class="delete-button-red">Cancel transaksi</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        function confirmDelete(id){
+            const isConfirmed = confirm(`Apakah anda yakin ingin menghapus transaksi dengan ID ${id}`);
+            if(isConfirmed){
+                fetch(`/api/transaction/${id}`, {
+                    method: 'DELETE',
+                })
+                .then(response => response.json())
+                .then(data=> {
+                    if(data.message.includes("berhasil dihapus")){
+                        alert("Data berhasil dihapus!");
+                        location.reload();
+                    }
+                    else{
+                        alert("Terjadi kesalahan saat menghapus data. Silahkan coba lagi.");
+                    }
+                })
+                .catch (error => {
+                    console.error("Error: ", error);
+                    alert("Terjadi kesalahan saat menghapus data. Silahkan coba lagi.");
+                });
+            }
+        }
+    </script>
+</body>
+</html>

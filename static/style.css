@@ -1,0 +1,388 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cce7ff;
+    color: #004a80;
+    text-align: center;
+    padding-top: 50px;
+}
+
+form {
+    display: inline-block;
+    border: 1px solid #004a80;
+    padding: 20px;
+    background-color: #e1f0ff;
+    border-radius: 10px;
+}
+
+/* Nuansa Ungu soft untuk Antarmuka Pencarian dan Pembaruan Data */
+.purple-theme {
+    background-color: #e6e0f8;
+}
+
+.purple-theme form {
+    background-color: #d1c2e6;
+}
+
+/* Nuansa Hijau soft untuk Antarmuka Menampilkan Semua Data */
+.green-theme {
+    background-color: #e0f8e0;
+}
+
+.green-theme form {
+    background-color: #c2e6c2;
+}
+
+/* Nuansa Merah soft untuk Antarmuka Penghapusan Data */
+.red-theme {
+    background-color: #f8e0e0;
+}
+
+.red-theme form {
+    background-color: #e6c2c2;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #004a80;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #004a80;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0066b2;
+}
+
+table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    color: black;
+}
+
+th, td {
+    border: 1px solid #004a80;
+    padding: 8px 12px;
+    text-align: left;
+    background-color: white;
+    
+}
+
+th {
+    background-color: #004a80;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* tr:hover {
+    background-color: #e1f0ff;
+} */
+
+/* Nuansa Biru untuk Halaman Utama */
+.blue-theme {
+    background-color: #0066b2;
+    color: white; /* Warna teks putih */
+}
+
+.blue-theme h2, .blue-theme h3 {
+    color: white; /* Warna teks judul putih */
+}
+
+.blue-theme a {
+    color: #e1f0ff; /* Warna teks link biru muda */
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.blue-theme a:hover {
+    background-color: #004a80; /* Warna biru gelap saat hover */
+    color: white;
+}
+
+/* Tombol Kekinian */
+.blue-theme a {
+    color: #004a80; /* Warna teks biru untuk kontras dengan latar belakang kuning */
+    text-decoration: none;
+    padding: 12px 24px;
+    background-color: #FFD700; /* Warna latar belakang kuning */
+    border: none;
+    border-radius: 25px; /* Pembulatan sudut tombol */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    transition: all 0.3s ease; /* Transisi halus */
+    font-weight: 600; /* Teks tebal */
+    margin: 10px;
+    display: inline-block;
+}
+
+.blue-theme a:hover {
+    background-color: #FFC700; /* Warna kuning sedikit lebih gelap saat di-hover */
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25); /* Efek bayangan saat hover */
+    transform: translateY(-2px); /* Efek "angkat" saat hover */
+}
+
+.blue-theme a:active {
+    transform: translateY(1px); /* Efek "tekan" saat tombol ditekan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan saat tombol ditekan */
+}
+
+/* Latar Belakang Halaman Utama */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f9; /* Warna latar belakang putih dengan sedikit nuansa abu-abu */
+    color: #004a80;
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Tombol dengan latar belakang kuning */
+.blue-theme a {
+    color: #004a80; /* Warna teks biru untuk kontras dengan latar belakang kuning */
+    text-decoration: none;
+    padding: 12px 24px;
+    background-color: #FFD700; /* Warna kuning */
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold; /* Teks tebal */
+    font-family: 'Arial', sans-serif; /* Font Arial */
+    margin: 10px;
+    display: inline-block;
+}
+
+.blue-theme a:hover {
+    background-color: #FFC700; /* Warna kuning sedikit lebih gelap saat di-hover */
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.blue-theme a:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700; /* Warna kuning */
+    color: #004a80; /* Warna teks biru */
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #FFC700; /* Warna kuning saat di-hover */
+}
+
+.form-container {
+    width: 300px; /* Anda bisa menyesuaikan lebar ini sesuai kebutuhan */
+    margin: 0 auto; /* Pusatkan kontainer di tengah halaman */
+}
+
+.home-button {
+    display: block; /* Membuat tombol menjadi block agar mengambil seluruh lebar kontainernya */
+    width: 100%; /* Mengambil seluruh lebar kontainernya */
+    text-align: center; /* Pusatkan teks di tombol */
+    padding: 10px 0; /* Padding atas dan bawah */
+    background-color: #FFD700; /* Warna kuning */
+    color: #004a80; /* Warna teks biru */
+    /* color: #004a80; Warna teks biru */
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #FFC700; /* Warna kuning saat di-hover */
+}
+
+/* Menempatkan button di pojok kanan atas */
+.home-button-display {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block; /* Menambahkan ini agar tombol hanya selebar tulisannya */
+}
+.home-button-display:hover {
+    background-color: #1666e8;
+}
+
+/* Gaya tambahan untuk tabel hasil pencarian di halaman delete_data.html */
+.search-results-table {
+    width: 50%; /* Lebar tabel setengah dari lebar halaman */
+    margin-left: auto; /* Pusatkan tabel di tengah halaman */
+    margin-right: auto;
+}
+
+/* Reset style for consistent rendering */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Form container style */
+.form-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #888888;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* Heading style */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Label style */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Input style */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Submit button style */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Submit button hover style */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Home button style */
+.home-button {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #004a80; /* edit barusan */
+    /*  color: #007bff; edit barusan */
+    text-decoration: none;
+}
+/* Tombol kuning */
+.yellow-button {
+    background-color: #FFD700; /* Warna kuning */
+    color: #004a80; /* Warna teks biru */
+}
+
+/* Home button hover style */
+.home-button:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styling untuk tombol menu */
+.menu-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #004a80; /* Warna background tombol */
+    color: rgb(229, 255, 0); /* Warna teks tombol */
+    /* color: white; /* Warna teks tombol */
+    text-decoration: none; /* Menghilangkan garis bawah pada teks */
+    border-radius: 5px; /* Membuat sudut tombol menjadi bulat */
+    font-weight: bold; /* Membuat teks menjadi tebal */
+    font-family: 'Roboto', sans-serif; /* Mengganti font teks */
+    margin: 10px; /* Memberikan jarak antar tombol */
+    transition: background-color 0.3s; /* Transisi warna background saat di-hover */
+}
+
+/* Styling saat tombol di-hover */
+.menu-button:hover {
+    background-color: #0066b2; /* Mengganti warna background saat di-hover */
+}
+
+/* Style untuk tombol update */
+.update-button {
+    background-color: #4CAF50; /* Warna background tombol */
+    color: white; /* Warna teks tombol */
+    padding: 10px 20px; /* Padding tombol */
+    border: none; /* Menghilangkan border */
+    cursor: pointer; /* Mengubah cursor menjadi pointer saat mouse over */
+    border-radius: 5px; /* Melengkungkan sudut tombol */
+}
+
+.update-button:hover {
+    background-color: #45a049; /* Mengubah warna background saat mouse over */
+}
+
+/* Style untuk label field */
+.field-label {
+    font-size: 16px; /* Ukuran font label */
+    color: #333; /* Warna font label */
+    font-weight: bold; /* Membuat font label menjadi bold */
+    margin-bottom: 5px; /* Menambahkan margin bawah label */
+    display: block; /* Mengatur label menjadi block element */
+}
+.delete-button-red {
+    background-color: red; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Menghilangkan border */
+    padding: 10px 20px; /* Padding untuk tombol */
+    text-align: center; /* Posisi teks di tengah */
+    text-decoration: none; /* Menghilangkan dekorasi teks */
+    display: inline-block; /* Menampilkan sebagai inline-block */
+    font-size: 16px; /* Ukuran font */
+    margin: 4px 2px; /* Margin untuk tombol */
+    cursor: pointer; /* Mengubah cursor menjadi pointer saat mouse over */
+    border-radius: 4px; /* Melengkungkan sudut tombol */
+}
+

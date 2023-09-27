@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data Barang Baru</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body class="blue-theme">
+    <h2>Input data barang baru</h2>
+    
+    <div class="form-container">
+
+        {% if error %}
+            <p style="color: red">{{error}}</p>
+        {% endif %}
+        <form action="/input/barang" method="post">
+            <label for="name">Nama Barang:</label>
+            <input type="text" name="name" id="name" placeholder="Masukkan nama barang" required>
+            <br>
+            <label for="category">Category:</label>
+            <input type="text" name="category" id="category" placeholder="Masukkan category barang">
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" placeholder="Masukkan jumlah barang">
+            <br>
+            <br>
+            <label for="price">Harga barang:</label>
+            <input type="number" name="price" id="price" placeholder="Masukkan harga barang">
+            <br>    
+            <br>
+            <input type="submit" value="Tambahkan">
+        </form>
+        <a href="/" class="home-button yellow-button">Kembali ke Home</a>
+    </div>    
+</body>
+</html>

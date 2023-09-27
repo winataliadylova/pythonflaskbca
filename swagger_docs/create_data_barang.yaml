@@ -1,0 +1,40 @@
+openapi: 3.0.0 # Mendefinisikan versi OpenAPI yang digunakan, dalam hal ini adalah versi 3
+
+info: # Blok informasi metadata tentang API
+  title: Ambil Semua Data Barang API 
+  version: 1.0.0 #versi API
+
+tags: # Daftar tag yang digunakan
+  - name: Daftar API
+
+parameters: #Daftar parameter yang dapat digunakan untuk semua operasi API
+  - in: body # parameter ini berada di body request
+    name: body # nama dari parameter
+    description: Data Barang yang akan ditambahkan # deskripsi dari parameter
+    required: true #mennadakan bahwa parameter ini wajib diisi 
+    schema: #skema dari parameter, mendefinisikan strikter data dari parameter
+      $ref: '#/definitions/Item' #referensi ke definisi 'Karyawan'
+
+responses:  # Daftar response yang dapat diberikan oleh opreasi API
+  201: #kode status HTTP untuk response sukses pembuatan resource baru
+    descriptions: Data Barang berhasil ditambahkan # deskripsi respon
+    schema:  #skema dari response, mendefinisikan struktur data dari respon
+      $ref: '#/definitions/Item' #referensi ke definisi 'karyawan'
+
+definitions: #daftar definisi skema yang dapat digunakan di seluruh file
+  Item: # nama dari definisi skema
+    type: object # tipe dari skema, dalam hal ini adalah object 
+    properties: # adaftar properti yang dapat dimiliki oleh onbject
+      name: # nama dari properti
+        type: string # tipe dari properti
+      category: # nama dari properti
+        type: string #tipe dari properti
+      quantity: # nama dari properti
+        type: integer # tipe dari properti
+      price: # nama dari properti
+        type: number # tipe dari properti
+      required: # daftar properti yang wajib ada dalam object
+        - name #properti ini adalah wajib
+        - category #properti ini adalah wajib
+        - quantity #properti ini adalah wajib
+        - price #properti ini adalah wajib

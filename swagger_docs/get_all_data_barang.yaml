@@ -1,0 +1,37 @@
+openapi: 3.0.0
+
+info: 
+  title: Ambil Semua Data Barang
+  version: 1.0.0
+
+tags: 
+  - name: Daftar API
+
+definitions: 
+  Item:
+    type: object
+    properties:
+      item_id:
+        type: integer
+        description: ID barang  
+      name:
+        type: string
+        description: Nama barang
+      category: 
+        type: string
+        description: Category barang
+      quantity:
+        type: integer
+        description: Jumlah barang
+      price:
+        type: number
+        description: Harga satuan barang
+
+responses: 
+  200:
+    description: Daftar semua barang
+    schema: 
+      type: array
+      items:
+        $ref: '#/definitions/Item'
+        

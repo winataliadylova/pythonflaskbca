@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilkan Semua Data Karyawan</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <!-- <style>
+        body{
+            background-color: yellow;
+        }
+    </style> -->
+</head>
+<body>
+    <a href="/" class="home-button-display">Kembali ke Home</a>
+    <h1>Semua Data Barang</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in list_barang %}
+            <tr>
+                <td>{{item.item_id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.quantity}}</td>
+                <td>Rp. {{item.price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

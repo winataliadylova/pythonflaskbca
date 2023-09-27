@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data Transaksi Baru</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body class="blue-theme">
+    <h2>Input data transaksi baru</h2>
+    
+    <div class="form-container">
+
+        {% if error %}
+            <p style="color: red">{{error}}</p>
+        {% endif %}
+        <form action="/input/transaction" method="post">
+            <label for="item_id">ID Barang:</label>
+            <input type="text" name="item_id" id="item_id" placeholder="Masukkan ID Barang" required>
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" placeholder="Masukkan jumlah barang" required>
+            <br>
+            <br>
+            <input type="submit" value="Tambahkan">
+        </form>
+        <a href="/" class="home-button yellow-button">Kembali ke Home</a>
+    </div>
+
+    <h1>Semua Data Barang</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in list_barang %}
+            <tr>
+                <td>{{item.item_id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.quantity}}</td>
+                <td>Rp. {{item.price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

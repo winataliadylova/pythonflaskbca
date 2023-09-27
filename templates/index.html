@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Inventaris Barang API</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body class="blue-theme">
+    <h2>Selamat Datang di API Data Inventaris Barang</h2>
+
+    <div class="menu">
+        <a href="/input/barang" class="menu-button" >Input data Barang</a>
+        <a href="/barang/display_all" class="menu-button">Get all data barang</a>
+        <a href="/barang/updatedata" class="menu-button">Search and Update data</a>
+    </div>
+    <div class="menu">
+        <a href="/input/transaction" class="menu-button" >Lakukan transaksi</a>
+        <a href="/transaction/display_all" class="menu-button">Get all data transaksi</a>
+        <!-- <a href="/transaction/display_all" class="menu-button">Cancel transaksi</a> -->
+    </div>
+</body>
+</html>
