@@ -1,7 +1,7 @@
 import sqlite3
 from sqlalchemy import create_engine, Column, Integer, DECIMAL, DateTime, ForeignKey, String, MetaData, Table
 
-DATABASE_URL = 'sqlite:///invbar.db'
+DATABASE_URL = 'mysql://root:cX8fGXW19Keo2TaEYoJf@containers-us-west-88.railway.app:7042/railway'
 engine = create_engine(DATABASE_URL, echo=True)
 metadata = MetaData()
 

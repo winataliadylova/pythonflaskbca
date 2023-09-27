@@ -10,11 +10,8 @@ import json
 # Mendefinisikan app
 app = Flask(__name__)
 
-# Lokasi database
-DATABASE_PATH = 'C:/Winata/Training Python/Final Project/invbar.db'
-
 # Database Configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + DATABASE_PATH
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:cX8fGXW19Keo2TaEYoJf@containers-us-west-88.railway.app:7042/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #Swagger Configuration
