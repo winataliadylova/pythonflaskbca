@@ -445,5 +445,5 @@ def display_all_transaction():
             return render_template('error.html', pesan="Tidak ada data transaksi yang dapat ditampilkan", link="/"), 404
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5030)
+    app.run(debug=True)
 
