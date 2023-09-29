@@ -84,18 +84,20 @@ def create_barang():
 @app.route('/api/barang/<int:item_id>', methods=['GET'])
 @swag_from('swagger_docs/get_one_data_barang.yaml')
 def get_one_barang(item_id):
-    barang = Item.query.get(item_id)
+    try:
+        barang = Item.query.get(item_id)
+        item = {
+            'Item ID' : barang.item_id,
+            'Name' : barang.name,
+            'Category' : barang.category,
+            'Quantity' : barang.quantity,
+            'Price': barang.price
+        }
     
-    item = {
-        'Item ID' : barang.item_id,
-        'Name' : barang.name,
-        'Category' : barang.category,
-        'Quantity' : barang.quantity,
-        'Price': barang.price
-    }
-
-    return jsonify({'message': f'Item: {item}'})
-
+        return jsonify({'message': f'Item: {item}'})
+    except Exception as e:
+        return jsonify({'message' : 'Data barang tidak di temukan'}), 404
+        
 @app.route('/api/barang/display_all', methods=['GET'])
 @swag_from('swagger_docs/get_all_data_barang.yaml')
 def tampil_all_barang():
